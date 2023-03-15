@@ -16,16 +16,10 @@ int main() {
     return 0;
 }
 
+//Bu midtermda tushishi mumkin bo'lgan savol
+//Kod qanday natijani qaytarishini ko'rsatib berish kerak
 
 //15
 //15
 //25
 //15
-
-
-
-
-
-
-
-
