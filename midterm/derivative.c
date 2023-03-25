@@ -1,5 +1,5 @@
 #include <stdio.h>
-//
+
 
 double f(double x) {
     return x = x*x;
@@ -23,5 +23,6 @@ int main() {
     
     return 0;
 }
+
 
 
