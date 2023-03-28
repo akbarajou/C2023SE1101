@@ -1,51 +1,74 @@
-// Wednesday 11:30 Mar 01 2023
 #include <stdio.h>
 #include <math.h>
-int i, A[3] = {4, 5, 6}, B[3] = {6, 7, 8};
-
-//Declare name
-void fun1() {
-    printf("Akbar Tangirov\n\n");
+// print name fun
+void print_name()
+{
+    printf("Name: Akbar Tangir\n");
 }
 
-//Calculate sin/cos
-void fun2(int x) {
-    int calc = 0;
-    calc = sin(x)*sin(x)+cos(x)*cos(x);
-    printf("%d\n", calc);
-}
-
-//Vextor calculation
-void fun3(int arr[]) {    
-    printf("vector A: ");
-    for (int A=0; A<3; A++)  {
-        printf("%d  ", arr[A]);
+// calculate sin^2(x) + cos^2(x)
+void calculate()
+{
+    double x;
+    double result;
+    for (x = 0; x <= 2; x += 0.5)
+    {
+        result = sin(x) * sin(x) + cos(x) * cos(x);
+        printf("sin(%.1f)sin(%.1f) + cos(%.1f)cos(%.1f) = %lf\n", x,x,x,x, result);
     }
-    printf("\n");
-    i = A[0]*B[0] + A[1]*B[1] + A[2]*B[2];
-    printf("scalar product: %d\n\n", i);
 }
 
-//Find triangle
-void fun4() {
-    float a = 3, b = 4, c = 5, A, B, C, R, s, pi, area;
-    pi = acos(-1);
-    s = (a + b + c) / 2;
-    area = sqrt(s * (s - a) * (s - b) * (s - c));
-    R = (a * b * c) / (4 * area);
-    A = (180 / pi) * asin(a / (2 * R));
-    B = (180 / pi) * asin(b / (2 * R));
-    C = (180 / pi) * asin(c / (2 * R));
-    printf("Triangle: %6.2f %6.2f %6.2f\n", A, B, C);
-
+// calculate AxB vector 
+void vector()
+{
+    int A[3] = {4, 5, 6};
+    int B[3] = {6, 7, 8};
+    int i;
+    int result = 0;
+    for (i = 0; i < 3; i++)
+    {
+        printf("A[%d], B[%d]\n", A[i], B[i]);
+        result += A[i] * B[i];
+    }
+    printf("AxB = %d\n", result);
 }
 
-int main(void) {
-    fun1();
-    fun2(2), fun2(1), fun2(0), fun2(1), fun2(2);
-    fun3(A);
-    fun4();
+// calculate triangle angle
+void triangle()
+{
+    // using variable
+    double a = 3;
+    double b = 4;
+    double c = 5;
+    double angleA;
+    double angleB;
+    double angleC;
+    angleA = acos((b*b + c*c - a*a) / (2 * b * c)) * 180 / 3.14;
+    angleB = acos((a*a + c*c - b*b) / (2 * a * c)) * 180 / 3.14;
+    angleC = acos((a*a + b*b - c*c) / (2 * a * b)) * 180 / 3.14;
+    printf("angleA = %.0f\nangleB = %.0f\nangleC = %.0f\n", angleA, angleB, angleC);
 
+    // using array
+    double tr[3] = {3, 4, 5};
+    double an[3];
+    char l[] = {'a', 'b', 'c'};
+    int i;
+    for (i = 0; i < 3; i++)
+    {
+        an[i] = acos((tr[(i+1)%3]*tr[(i+1)%3] + tr[(i+2)%3]*tr[(i+2)%3] - tr[i]*tr[i]) / (2 * tr[(i+1)%3] * tr[(i+2)%3])) * 180 / 3.14;
+        printf("angle %c = %.0f\n", l[i], an[i]);
+    }
+}
+
+// main fun
+int main()
+{
+    print_name();
+    calculate();
+    vector();
+    triangle();
     return 0;
 }
 
+
+// Wednesday 11:30 Mar 01 2023
