@@ -1,99 +1,34 @@
 #include <stdio.h>
+// convert hex to decimal
 
-/*Integer A, B are vectors, where int A[]= {2, 5, 3}, and int B[]= {2, 3, 4} .
-Write a program to calculate scalar product A•B using for loop.*/
-// int main() 
-// {
-//     int A[3] = {2,5,3};
-//     int B[3] = {2,3,4};
-//     int i, sum = 0;
-//     for (i = 0; i < 3; i++) {
-//         sum += A[i] * B[i];
-//         printf("A•B = %d\n", sum);
-//     }
+
+int hextodec(char s[])
+{
+    int i, n;
+    n = 0;
+    for (i = 0; s[i] >= '0' && s[i] <= '9' || s[i] >= 'a' && s[i] <= 'f' || s[i] >= 'A' && s[i] <= 'F'; ++i)
+    {
+        if (s[i] >= '0' && s[i] <= '9')
+            n = 16 * n + (s[i] - '0');
+        else if (s[i] >= 'a' && s[i] <= 'f')
+            n = 16 * n + (s[i] - 'a' + 10);
+        else if (s[i] >= 'A' && s[i] <= 'F')
+            n = 16 * n + (s[i] - 'A' + 10);
+    }
+    return n;
+}
+
+int main()
+{
+    char s[100];
+    printf("enter a hex number: ");
+    scanf("%s", s);
     
-//     return 0;
-// }
-
-    for(i = 0; i < count; i++) {
-        if(numbers[i] % 2 == 1) {
-            printf("%d is odd number\n", numbers[i]);
-        }
-    }
-}
-
-// Calculate fun(x,y)
-void func1(int argc, char *argv[])
-{
-    int x, y;
-    for(x = 1; x <= 4; x++) {
-        for(y = 1; y <= 4; y++) {
-            printf("f(%d, %d) = %d\n", x, y, x*x*y);
-        }
-    }
-}
-
-// Matrix
-void func2(void)
-{
-    int C[2][3] = {{1, 2, 3}, {4, 5, 6}};
-    int D[2][3];
-    int i, j;
-
-    for(i = 0; i < 2; i++) {
-        for(j = 0; j < 3; j++) {
-            D[i][j] = C[i][j];
-        }
-    }
-
-    for(i = 0; i < 2; i++) {
-        for(j = 0; j < 3; j++) {
-            printf("D[%d][%d] = %d\n", i, j, D[i][j]);
-        }
-    }
-}
-
-// Find triangle
-void func3(void)
-{
-    int A = 5;
-    int *B = &A;
-
-    *B += 3;
-    printf("A = %d\n", A);
-}
-
-// Derivative of a function
-void func4(void)
-{
-    int i;
-    float x, h = 0.01, f, df;
-
-    for(i = 0; i < 5; i++) {
-        x = 0.2 + i * 0.2;
-        f = x * x;
-        df = (f + h - f) / h;
-        printf("f(%.1f) = %f\n", x, df);
-    }
-}
-
-
-
-
-int main(void)
-{
-    char *name = "Akbar Tangirov";
-    int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-    print_name(name);
-    odd_numers(numbers, 10);
-    func1(0, NULL);
-    func2();
-    func3();
-    func4();
-
+    printf("%d\n", hextodec(s));
     return 0;
 }
+
+
 
 
 

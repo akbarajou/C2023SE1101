@@ -7,6 +7,7 @@
         for (int i=0; i<size; i++){
              printf("%d  ", *(B+i));
         }
+        printf("\n");
    }
 
 int main()
