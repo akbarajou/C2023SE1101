@@ -19,3 +19,5 @@ int main()
 0061FF0C  b  banana republic
 0061FF0D  a  anana republic
 */
+
+// Path: stc.c
