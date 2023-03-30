@@ -1,15 +1,19 @@
 #include <stdio.h>
 
-// Print name
-void print_name(char *name)
-{
-    printf("Name: %s\n", name);
-}
-
-// Odd number
-void odd_numers(int *numbers, int count)
-{
-    int i = 0;
+/*Integer A, B are vectors, where int A[]= {2, 5, 3}, and int B[]= {2, 3, 4} .
+Write a program to calculate scalar product A•B using for loop.*/
+// int main() 
+// {
+//     int A[3] = {2,5,3};
+//     int B[3] = {2,3,4};
+//     int i, sum = 0;
+//     for (i = 0; i < 3; i++) {
+//         sum += A[i] * B[i];
+//         printf("A•B = %d\n", sum);
+//     }
+    
+//     return 0;
+// }
 
     for(i = 0; i < count; i++) {
         if(numbers[i] % 2 == 1) {

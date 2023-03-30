@@ -48,16 +48,6 @@ void triangle()
     angleC = acos((a*a + b*b - c*c) / (2 * a * b)) * 180 / 3.14;
     printf("angleA = %.0f\nangleB = %.0f\nangleC = %.0f\n", angleA, angleB, angleC);
 
-    // using array
-    double tr[3] = {3, 4, 5};
-    double an[3];
-    char l[] = {'a', 'b', 'c'};
-    int i;
-    for (i = 0; i < 3; i++)
-    {
-        an[i] = acos((tr[(i+1)%3]*tr[(i+1)%3] + tr[(i+2)%3]*tr[(i+2)%3] - tr[i]*tr[i]) / (2 * tr[(i+1)%3] * tr[(i+2)%3])) * 180 / 3.14;
-        printf("angle %c = %.0f\n", l[i], an[i]);
-    }
 }
 
 // main fun
