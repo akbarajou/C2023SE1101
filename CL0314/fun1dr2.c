@@ -7,6 +7,7 @@
         for (int i=0; i<size; i++){
              printf("%d  ", *(B+i));
         }
+        printf("\n");
    }
 
 int main()
@@ -17,7 +18,7 @@ int main()
     printf("Main %p  \n", A[2]);
     disp (A, 5);
 
-   return 0;
+    return 0;
 }
 
 /*

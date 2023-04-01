@@ -1,4 +1,4 @@
-// ascii.c  230302	
+// ascii.c  230302 
 
 #include<stdio.h>
 
