@@ -1,32 +1,37 @@
+/*  
+    CopyRight: Tangirov Akbar 
+    Ajou University in Tashkent Electrical and Computer Engineering Department
+    Date: 01.03.2023
+    Description: lab task
+*/
 #include <stdio.h>
 #include <math.h>
 
 // print name fun
 void print_name()
 {
-    printf("Name: Akbar Tangir\n");
+    printf("name: Akbar Tangirov(E30C)\n");
 }
 
 // calculate sin^2(x) + cos^2(x)
-void calculate()
+void sin_cos()
 {
     double x;
     double result;
     for (x = 0; x <= 2; x += 0.5)
     {
-        result = sin(x) * sin(x) + cos(x) * cos(x);
-        printf("sin(%.1f)sin(%.1f) + cos(%.1f)cos(%.1f) = %lf\n", x,x,x,x, result);
+        result = sin(x)*sin(x) + cos(x)*cos(x);
+        printf("sin^2(%.1f) + cos^2(%.1f) = %.2f\n", x,x, result);
     }
 }
 
 // calculate AxB vector 
 void vector()
 {
-    int A[3] = {4, 5, 6};
-    int B[3] = {6, 7, 8};
-    int i;
-    int result = 0;
-    for (i = 0; i < 3; i++)
+    int A[3] = {4, 5, 6}; // A vector
+    int B[3] = {6, 7, 8}; // B vector
+    int result = 0; // for save result of AxB
+    for (int i = 0; i < 3; i++)
     {
         printf("A[%d], B[%d]\n", A[i], B[i]);
         result += A[i] * B[i];
@@ -37,25 +42,31 @@ void vector()
 // calculate triangle angle
 void triangle()
 {
-    // using variable
-    double a = 3;
-    double b = 4;
-    double c = 5;
-    double angleA;
-    double angleB;
-    double angleC;
-    angleA = acos((b*b + c*c - a*a) / (2 * b * c)) * 180 / 3.14;
-    angleB = acos((a*a + c*c - b*b) / (2 * a * c)) * 180 / 3.14;
-    angleC = acos((a*a + b*b - c*c) / (2 * a * b)) * 180 / 3.14;
-    printf("angleA = %.0f\nangleB = %.0f\nangleC = %.0f\n", angleA, angleB, angleC);
+    double a = 3, b = 4, c = 5; // sides
+    double A, B, C; // angles
+    double pi = 3.14159265358979323846; // pi
+    A = acos((b*b + c*c - a*a) / (2 * b * c)) * 180 / pi;
+    B = acos((a*a + c*c - b*b) / (2 * a * c)) * 180 / pi;
+    C = acos((a*a + b*b - c*c) / (2 * a * b)) * 180 / pi;
+    printf("Angle A: %.0f\n", A);
+    printf("Angle B: %.0f\n", B);
+    printf("Angle C: %.0f\n", C);
 
+    // easy way
+    A = asin(a / c) * 180 / pi;
+    B = asin(b / c) * 180 / pi;
+    C = 180 - A - B;
+    printf("Angle A: %.0f\n", A);
+    printf("Angle B: %.0f\n", B);
+    printf("Angle C: %.0f\n", C);
+    
 }
 
 // main fun
 int main()
 {
     print_name();
-    calculate();
+    sin_cos();
     vector();
     triangle();
     return 0;
