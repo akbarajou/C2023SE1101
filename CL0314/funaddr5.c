@@ -10,9 +10,12 @@ void fun( int (*B)[4])   // # of column
 int main()
 {
      int A[3][4] = {1,2,3,4,5,6,7,8,9,10,11,12};
+     long int  x = 231324724672682;
+     printf("x = %x\n", x);
+     printf("x = %d\n", x);
      printf("1 Main %p  %p  \n", A, A+1);  // 16 bytes
      printf("2 Main  %d  %d  %d  \n", A[0][0], A[0][1], A[0][2]);  // 123
-     printf("3 Main  %p  %p  %p  \n", *A, *(A+1), *(A+2));  // addr
+     printf("3 Main  %p  %p  %x  \n", *A, *(A+1), *(A+2));  // addr
      printf("4 Main  %p  %p  %p  \n", **A, **(A+1), **(A+2));  // 159
      printf("5 Main  %d  %d  %d  \n", *A[0], *A[1], *A[2]);  // 159
      printf("6 Main  %d  %d  %d  \n", *A[0], *(A[0]+1), *(A[0]+2));  // 123

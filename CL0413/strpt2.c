@@ -3,8 +3,8 @@
 #include <stdio.h>
 int main()
 {
-    int i;
-    char *na= "abcd ";
+    int i = "abcd ";
+    char *na = &i;
     printf ("%s  %p  %p  \n", na, na, &na);
 
     char *nb= "efgh ";

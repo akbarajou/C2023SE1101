@@ -1,32 +1,25 @@
 #include <stdio.h>
+#include <math.h>
 
-void foo1(int xval)
+
+int main(void)
 {
-    int x;
-    x = xval;
-    printf("foo1: x address is %p \n", &x);
-    printf("foo1: x value is %d \n\n", x);
+    double a = 3, b = 4, c = 5; // sides
+    double A, B, C; // angles
+    double pi = 3.14159265358979323846; // pi
+    
+    A = acos((b*b + c*c - a*a) / (2 * b * c)) * 180 / pi;
+    B = acos((a*a + c*c - b*b) / (2 * a * c)) * 180 / pi;
+    C = acos((a*a + b*b - c*c) / (2 * a * b)) * 180 / pi;
+    printf("Angle A: %.2f\n", A);
+    printf("Angle B: %.2f\n", B);
+    printf("Angle C: %.2f\n", C);
+
+    // easy way
+    A = asin(a / c) * 180 / pi;
+    B = asin(b / c) * 180 / pi;
+    C = 180 - A - B;
+    printf("Angle A: %f\n", A);
+    printf("Angle B: %f\n", B);
+    printf("Angle C: %f\n", C);
 }
-
-void foo2(int yval)
-{
-    int y;
-    printf("foo2: y address is %p \n", &y);
-    printf("foo2: y value is %d \n", y);
-}
-
-int main()
-{
-    foo1(7);
-    foo2(11);
-    return 0;
-}
-
-
-/*
-    foo1: x address is 0x7fffd2612794
-    foo1: x value is 7
-
-    foo2: y address is 0x7fffd2612794 
-    foo2: y value is 7
-*/
