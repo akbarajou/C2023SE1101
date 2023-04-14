@@ -3,22 +3,22 @@
 #include <stdio.h>
 void fun( int B[]) 
 {
-    printf("Func %p  %p \n", B, &B);
+    printf("Func %x  %x \n", B, &B);
     for(int i=0; i<4; i++)
     {
-        printf("%d   %p  \n", B[i], &B[i]);
+        printf("%d   %x  \n", B[i], &B[i]);
     }
     B=B+1;
-    printf("Func2 %p  %p \n", B, &B);
+    printf("Func2 %x  %x \n", B, &B);
 }
 
 int main()
 {
      int A[] = {1,2,3,4};
-     printf("Main %p   %p \n", A, &A);
+     printf("Main %x   %x \n", A, &A);
      for(int i=0; i<4; i++)
     {
-        printf("Main   %d   %p  \n",  A[i], &A[i]);
+        printf("Main   %d   %x  \n",  A[i], &A[i]);
      }
      fun(A);
     // A=A+1;  Error

@@ -6,10 +6,10 @@ int main()
 {
     int A= 5;
     int *B;
-    B= &A;
+    B = &A;
 
-    printf ("%p  %d  %p  \n", B, *B, &B); 
-    printf ("%p  \n", B+1); 
+    printf ("%x  %d  %p  \n", B, *B, &B); 
+    printf ("%x  \n", B+1); 
     return 0;
 }
 
