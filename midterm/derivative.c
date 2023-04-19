@@ -6,13 +6,11 @@ double f(double x) {
     }
 
 int main() {
-    double x_values[] = {0.2, 0.4, 0.6, 0.8, 1.0};
     double h = 0.01;
     
-    for (int i = 0; i < 5; i++) {
-        double x = x_values[i];
-        double d = (f(x + h) - f(x)) / h;
-        printf("derivative of f(x) at x = %.1f is %f\n", x, d);
+    for (float i = 0.2; i <= 1; i += 0.2) {
+        //double d = (f(i + h) - f(i)) / h;
+        printf("derivative of f(x) at x = %.1f is %.2f\n", i, (f(i + h) - f(i)) / h);
     }
     
     return 0;

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
 int main(void)
 {
     double a = 3, b = 4, c = 5; // sides

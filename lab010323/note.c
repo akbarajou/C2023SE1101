@@ -16,9 +16,8 @@ void print_name()
 // calculate sin^2(x) + cos^2(x)
 void sin_cos()
 {
-    double x;
     double result;
-    for (x = 0; x <= 2; x += 0.5)
+    for (double x = 0; x <= 2; x += 0.5)
     {
         result = sin(x)*sin(x) + cos(x)*cos(x);
         printf("sin^2(%.1f) + cos^2(%.1f) = %.2f\n", x,x, result);
