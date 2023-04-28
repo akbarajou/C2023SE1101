@@ -7,23 +7,23 @@
 #include <stdio.h>
 #include <math.h>
 
-float func1(float x);
-void func2(void);
+float sinx(float x);
+void matrix(void);
 
 int main(void)
 {
     printf("name: Akbar T(E30C)\n");
-    printf("sin(1) = %f\n", func1(1));
-    func2();
+    printf("sin(1) = %f\n", sinx(1));
+    matrix();
     return 0;
 }
 
-float func1(float x)
+float sinx(float x)
 {
     return sin(x);
 }
 
-void func2(void)
+void matrix(void)
 {
     int i, j;
     for (i = 1; i <= 3; i++)

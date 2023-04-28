@@ -1,50 +1,64 @@
 /*
-    CopyRight: Akbar Tangirov (E30C)
-    Ajou University in Tashkent Electrical and Computer Engineering Department
-    Date: 19/04/2023
-    Description: lab test
+	CopyRight: Akbar Tangirov (E30C)
+	Ajou university in Tashkent Electrical and Computer Engineering department
+	date: 04/1p/2023
+	Description: Test
 */
 #include <stdio.h>
 #include <math.h>
 
-// sinx() is a function that returns sin(x)
 float sinx(float x)
 {
-    return sin(x);
+	return sin(x);
 }
 
-// array_sum() is a function that prints the sum of the elements of an array
-void array_sum(int *A)
+int func(int a[])
 {
-    int sum = 0;
-    for (int i = 0; i < 3; i++)
-    {
-        sum += A[i];
-    }
-    printf("array sum: %d\n\n", sum);
+	int sum = 0;
+	for (int i=0; i < 3; i++)
+	{
+		sum += a[i];
+	}
+	return printf("array sum: %d\n", sum);
 }
 
-// main function
+void func3(void)
+{
+	
+	for (int i=1; i <= 3; i++)
+	{
+		for (int j=1; j <= 3; j++)
+		{
+			printf("%d * %d = %d\n", i, j, i*j);
+		}
+		printf("\n");
+	}
+}
+
+
 int main(void)
 {
-    int sum = 0, A[] = {1, 2, 3};
+	printf("name: Akbar (E30C)\n");
+	int sum = 0;
+	for (int i=2; i<21; i+=2)
+	{
+		sum += i;
+		printf("%d  ", i);
+	}
+	printf("sum: %d\n", sum);
 
-    // print name
-    printf("\nname: Akbar (E30C)\n\n");
-
-    // print sin(1) by calling sinx()
-    printf("sin(1) = %.1f\n\n", sinx(1));
-
-    // print even number from 1 to 21 and sum them by using for loop
-    for (int i = 2; i < 21; i += 2)
-    {
-        sum += i;
-        printf("%d ", i);
-    }
-    printf("    sum: %d\n\n", sum);
-
-    // print array sum by calling array_sum()
-    array_sum(A);
-
-    return 0;
+	float fun = sinx(4);
+	printf("sin(%.2f)\n", fun);
+	
+	int A[] = {1, 2, 3};
+	func(A);
+	
+	func3();
+	float r = 4;
+	float y = 2 * M_PI * r;
+	printf("r = %.0f\nyuza: %f\n", r, y);
 }
+	
+	
+
+
