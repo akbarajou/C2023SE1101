@@ -2,27 +2,20 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-int main()
+int main(void)
 {
-  //  char name[10];
-  //  char name[10]= "asdfg";
-    char name[]= "asdfg";
+    int *arr = malloc(2 * sizeof(int));
+    arr[0] = 1;
+    arr[1] = 2;
 
-  //  name= "abcdef"; // Error
-  //  name[]= "abcdef"; // Error
-   // name[10]= "abcdef"; // No input
+    printf("%d  %d\n", arr[0], arr[1]);
+    arr = realloc(arr, 3 * sizeof(int));
 
-  //  strcpy(name, "qwert");
-    printf ("11  %s  %d  \n", name, sizeof(name));
+    arr[2] = 3;
+    printf("%d\n", arr[2]);
 
-    strcpy(name, "AABBCC");
-    printf ("22  %s  \n", name);
-
-    return 0;
+    
+    free(arr);
 }
-
-/*
-11  asdfg 10 or 6
-22  AABBCC
-*/

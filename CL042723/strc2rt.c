@@ -19,11 +19,11 @@ AA center (AA a, AA b)
 int main() 
 {
     AA result, A1, A2;
-    A1.x=1.;  A1.y=2.;
-    A2.x=3.;  A2.y=4.;
+    A1.x=9;  A1.y=2.;
+    A2.x=1;  A2.y=9.;
 
     result= center(A1, A2);
-    printf("%f   %f", result.x, result.y);
+    printf("%f   %f\n", result.x, result);
     return 0;
 }
 

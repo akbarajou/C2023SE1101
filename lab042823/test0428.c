@@ -7,12 +7,12 @@
 #include <stdio.h>
 #include <math.h>
 
-float fsin(float x)
+float fsin(float *x)
 {
-	return sin(x);
+	return sin(*x);
 }
 
-void farr(int x[])
+void farr(int *x)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -22,7 +22,8 @@ void farr(int x[])
 
 int main(void)
 {
-	int i, sum = 0, A[] = {9, 19, 99};
+	int i, sum = 0, A[] = {10, 19, 99};
+	float pi = 3.1415926;
 
 	printf("name: Akbar (E30C)\n\n");
 
@@ -32,10 +33,7 @@ int main(void)
 		sum = sum + i;
 	}
 	printf("sum: %d\n\n", sum);
-
-	printf("sin(pi) = %f\n\n", fsin(M_PI));
-
-	farr(A);
-
-
+	printf("sin(pi) = %f\n\n", fsin(&pi));
+	farr(&A[0]);
+	return 0;
 }

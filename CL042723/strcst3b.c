@@ -15,7 +15,7 @@ int main()
     A[0].num= 1;
     A[0].name= "john";
     A[0].addr= "Fergana";
-    printf("%p  %p  %p  \n", &A[0].num, &A[0].name, &A[0].addr);
+    printf("%p  %p  %p  \n", &A[1].num, &A[1].name, &A[1].addr);
 
     A[1].num= 2;
     A[1].name= "kim";
@@ -30,7 +30,7 @@ int main()
         printf("%d  %s  %s  \n", A[i].num, A[i].name, A[i].addr);
     }
     A[0].name= "johnathan";
-    printf("%p  %p  %p  \n", &A[0].num, &A[0].name, &A[0].addr);
+    printf("%p  %p  %p  \n", &A[1].num, &A[1].name, &A[1].addr);
    return 0;
 }
 

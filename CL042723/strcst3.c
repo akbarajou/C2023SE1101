@@ -22,13 +22,13 @@ int main()
 
     A[2].num= 3;
     A[2].name= "Lee";
-    A[2].addr= "Samark";
+    A[2].addr= "Samarkand";
 
     for (int i=0; i<3; i++)
     {
         printf("%d  %s  %s  \n", A[i].num, A[i].name, A[i].addr);
     }
-   return 0;
+    return 0;
 }
 
 /*

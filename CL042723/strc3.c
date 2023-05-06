@@ -16,6 +16,7 @@ int main()
     A1.y= 4.0;
     A1.z= 3.0;
     printf("%f  %f  %f  \n", A1.x, A1.y, A1.z);
+    printf("%p  %p   %p \n", &A1, &A1.y, &A1.z); 
     float distance= A1.x*A1.x + A1.y*A1.y+A1.z*A1.z;
     printf("Distance   %f \n", distance);
 
@@ -24,7 +25,7 @@ int main()
     A2.y=2.0;
     A2.z=1.0;
     printf("%f  %f %f  \n", A2.x, A2.y, A2.z);
-    printf("%p  %p   %p \n", &A1, &A1.y, &A2);
+    printf("%p  %p   %p \n", &A1.x, &A1.y, &A2.z);
     return 0;
 }
 

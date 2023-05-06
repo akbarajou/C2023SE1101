@@ -26,18 +26,24 @@ int main()  {
     A2.y=6.0;
     printf("Main  %p  %p  %p \n", &A1, &A2, &dist);
     fun(A2);
+
+    AA A3;
+    A3.x=7.0;
+    A3.y=9.0;
+    printf("Main  %p  %p  %p \n", &A1, &A2, &A3);
+    fun(A3);
     return 0;
 }
 
 /*
-Distance   25.000000
-Func  3.000000  4.000000
-Func  0061FEF0
-Func ***  40400000
-Func  0061FEF0  0061FEF0  0061FEF4
-Main  0061FF18  0061FF0C  0061FF14
-Func  5.000000  6.000000
-Func  0061FEF0
-Func ***  40A00000
-Func  0061FEF0  0061FEF0  0061FEF4
+Distance   25.000000 
+Func  3.000000  4.000000  
+Func  0x7fff2ea44678  
+Func ***  0x5642827ab2a0  
+Func  0x7fff2ea44678  0x7fff2ea44678  0x7fff2ea4467c 
+Main  0x7fff2ea44698  0x7fff2ea446a0  0x7fff2ea44694 
+Func  5.000000  6.000000  
+Func  0x7fff2ea44678  
+Func ***  0x5642827ab2a0  
+Func  0x7fff2ea44678  0x7fff2ea44678  0x7fff2ea4467c 
 */
