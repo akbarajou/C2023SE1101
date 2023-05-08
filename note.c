@@ -1,19 +1,22 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 
-
-int main(void)
+int main()
 {
-    double a = 3, b = 4, c = 5; // sides
-    double A, B, C; // angles
-    double pi = 3.14159265358979323846; // pi
-
-    // find angles
-    A = asin(a / c) * 180 / pi;
-    B = acos(a / c) * 180 / pi;
-    C = 180 - A - B;
-
-    printf("Angle A: %f\n", A);
-    printf("Angle B: %f\n", B);
-    printf("Angle C: %f\n", C);
+    int i, * ptr, sum = 0;
+    ptr = calloc(10, sizeof(int));
+    if (ptr == NULL)
+    {
+        printf("Error! memory not allocated.");
+        exit(0);
+    }
+    printf("Building and calculating the sequence sum of the first 10 terms \n");
+    for (i = 0; i < 10; ++i)
+    {
+        *(ptr + i) = i;
+        sum += *(ptr + i);
+    }
+    printf("Sum = %d\n", sum);
+    free(ptr);
+    return 0;
 }

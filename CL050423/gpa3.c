@@ -11,7 +11,7 @@ typedef struct  {
 } AA ;
 
 void fun(AA *pt) {
-   pt->gpa= (pt->eng + pt->circ)/2;
+   *pt->gpa= (pt->eng + pt->circ)/2;
 }
 
 int main()  {
