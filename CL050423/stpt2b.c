@@ -16,7 +16,7 @@ int main()
    A1.age= 22;
    A1.weight= 60.0;
    ptr->age= ptr->age+ 30;
-   printf("%d  %d  %f  \n", A1.age, ptr->age, A1.weight);
+   printf("%x  %x  %f  \n", &A1.age, &ptr->age, A1.weight);
    
    return 0;
 }
