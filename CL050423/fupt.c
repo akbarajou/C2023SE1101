@@ -1,7 +1,7 @@
 // fupt.c  	230502  
 #include <stdio.h>
 
-void fun( int *B) 
+void fun( int *B)
 {
     printf("\nFunc %p  %p  %p  %p  %p \n", B, *B, &B, *(&B), **(&B));
     for (int i=0; i<4; i++)

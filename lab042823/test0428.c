@@ -27,7 +27,7 @@ int main(void)
 
 	printf("name: Akbar (E30C)\n\n");
 
-	for (i = 2; i < 21; i+=2)
+	for (i = 0; i < 2; i++)
 	{
 		printf("%d  ", i);
 		sum = sum + i;

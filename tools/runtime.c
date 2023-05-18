@@ -6,3 +6,12 @@ double calculate_runtime(clock_t start_time)
     double runtime = (double)(end_time - start_time) / CLOCKS_PER_SEC;
     return runtime;
 }
+
+int main(void)
+{
+    clock_t start_time = clock();
+
+
+
+    printf("Runtime: %g\n", calculate_runtime(start_time));
+}

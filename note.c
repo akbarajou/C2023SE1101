@@ -1,22 +1,51 @@
+#include <ctype.h>
+#include <cs50.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main()
+// Points assigned to each letter of the alphabet
+int POINTS[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
+
+int compute_score(string word);
+
+int main(void)
 {
-    int i, * ptr, sum = 0;
-    ptr = calloc(10, sizeof(int));
-    if (ptr == NULL)
+    // Get input words from both players
+    string word1 = get_string("Player 1: ");
+    string word2 = get_string("Player 2: ");
+
+    // Score both words
+    int score1 = compute_score(word1);
+    int score2 = compute_score(word2);
+
+    // TODO: Print the winner
+    printf("%d\n", score1);
+    printf("%d\n", score2);
+    if (score1 > score2)
     {
-        printf("Error! memory not allocated.");
-        exit(0);
+        printf("Player 1 wins!\n");
     }
-    printf("Building and calculating the sequence sum of the first 10 terms \n");
-    for (i = 0; i < 10; ++i)
+    else if (score2 > score1)
     {
-        *(ptr + i) = i;
-        sum += *(ptr + i);
+        printf("Player 2 wins!\n");
     }
-    printf("Sum = %d\n", sum);
-    free(ptr);
-    return 0;
+    else if (score1 == score2)
+    {
+        printf("Tie!\n");
+    }
+}
+
+int compute_score(string word)
+{
+    // TODO: Compute and return score for string
+    char c;
+    int score = 0;
+    for (int i = 0; i < strlen(word); i++)
+    {
+        c = toupper(word[i]);
+        if (c >= 'A' && c <= 'Z')
+        {
+            score += POINTS[c - 'A'];
+        }
+    }
 }
